@@ -1,0 +1,21 @@
+<<<<<<< Original<<<<<<< Original<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="ru.mgusev.questbook.debug.main.MainActivity" />
+</application>
+</manifest>
+
+    =======<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="ru.mgusev.questbook.debug.main.MainActivity" />
+</application>
+</manifest>>>>>>>> Added
+
+    =======<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="ru.mgusev.questbook">
+
+<application>
+    <activity android:name="ru.mgusev.questbook.main.MainActivity" />
+</application>
+</manifest>>>>>>>> Added
