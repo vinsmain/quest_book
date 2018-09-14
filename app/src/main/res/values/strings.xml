@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">QuestBook</string>
+    <string name="stamina_header">stamina</string>
+    <string name="courage_header">courage</string>
+    <string name="sympathy_header">sympathy</string>
+    <string name="episode_image_description">Episode Image</string>
 </resources>

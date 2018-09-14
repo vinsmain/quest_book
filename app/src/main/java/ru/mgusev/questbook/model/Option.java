@@ -22,6 +22,15 @@ public class Option {
     @ColumnInfo(name = "children_episode_id")
     private int childrenId;
 
+    @ColumnInfo(name = "conditions")
+    private String conditions;
+
+    @ColumnInfo(name = "effects")
+    private String effects;
+
+    @ColumnInfo(name = "random")
+    private int random;
+
     public int getId() {
         return id;
     }
@@ -52,5 +61,29 @@ public class Option {
 
     public void setChildrenId(int childrenId) {
         this.childrenId = childrenId;
+    }
+
+    public String getConditions() {
+        return conditions;
+    }
+
+    public void setConditions(String conditions) {
+        this.conditions = conditions;
+    }
+
+    public String getEffects() {
+        return effects;
+    }
+
+    public void setEffects(String effects) {
+        this.effects = effects;
+    }
+
+    public int getRandom() {
+        return random;
+    }
+
+    public void setRandom(int random) {
+        this.random = random;
     }
 }

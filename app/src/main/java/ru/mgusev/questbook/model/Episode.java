@@ -22,6 +22,9 @@ public class Episode {
     @ColumnInfo(name = "image")
     private String image;
 
+    @ColumnInfo(name = "end")
+    private boolean end;
+
     public int getId() {
         return id;
     }
@@ -52,5 +55,13 @@ public class Episode {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public boolean isEnd() {
+        return end;
+    }
+
+    public void setEnd(boolean end) {
+        this.end = end;
     }
 }

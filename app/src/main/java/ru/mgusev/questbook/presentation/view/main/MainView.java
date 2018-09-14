@@ -8,7 +8,19 @@ import ru.mgusev.questbook.model.Option;
 
 public interface MainView extends MvpView {
 
+    void setVisibilityEpisodeImage(boolean visible);
+
+    void showEpisodeImage(String imageResource);
+
     void setEpisodeText(String text);
 
     void initOptionButtonList(List<Option> optionList);
+
+    void clearOptionButtonsContainer();
+
+    void setStaminaValue(String value);
+
+    void setCourageValue(String value);
+
+    void setSympathyValue(String value);
 }

@@ -12,4 +12,7 @@ public interface OptionDAO {
 
     @Query("SELECT * FROM options WHERE parent_episode_id = :episodeId")
     List<Option> getOptionList(int episodeId);
+
+    @Query("SELECt * FROM options WHERE _id = :id")
+    Option getOptionById(int id);
 }
