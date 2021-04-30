@@ -1,7 +1,21 @@
 <resources>
-    <string name="app_name">QuestBook</string>
-    <string name="stamina_header">stamina</string>
-    <string name="courage_header">courage</string>
-    <string name="sympathy_header">sympathy</string>
+    <string name="app_name">Слон-убийца</string>
+    <string name="stamina_header">Выносливость</string>
+    <string name="courage_header">Смелость</string>
+    <string name="sympathy_header">Симпатия Амаки</string>
     <string name="episode_image_description">Episode Image</string>
+    <string name="dialog_message">Хотите начать новую игру?\nНезавершенная игра будет утеряна.</string>
+    <string name="dialog_negative">Отмена</string>
+    <string name="dialog_positive">Да</string>
+    <string name="menu_title">СЛОН-УБИЙЦА</string>
+    <string name="menu_author_header">автор книги</string>
+    <string name="menu_author_name">Константин Таро</string>
+    <string name="Menu_new_game_header">Новая игра</string>
+    <string name="menu_continue_game_header">Продолжить игру</string>
+    <string name="menu_exit_game_header">Выйти</string>
+    <string name="main_game_over_header">ИГРА ОКОНЧЕНА!</string>
+    <string name="main_back_to_menu_header">Вернуться в меню</string>
+    <string name="inventory_header"><u>Инвентарь</u></string>
+    <string name="characteristics_header"><u>Характеристики</u></string>
+    <string name="version_header">версия</string>
 </resources>

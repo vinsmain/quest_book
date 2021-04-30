@@ -19,13 +19,18 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".ui.activity.main.MainActivity" />
+        <activity android:name=".ui.activity.main.MainActivity"
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".ui.activity.menu.MenuActivity">
+        <activity android:name=".ui.activity.menu.MenuActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.activity.main.CharacterListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/DialogTheme" />
     </application>
 </manifest>

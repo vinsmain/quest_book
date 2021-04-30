@@ -20,7 +20,26 @@ public class MenuPresenter extends MvpPresenter<MenuView> {
         App.getComponent().inject(this);
     }
 
+    @Override
+    protected void onFirstViewAttach() {
+        super.onFirstViewAttach();
+        refreshMenu();
+    }
+
+    public void refreshMenu() {
+        getViewState().setVisibilityContinueGameButton(repository.getNoCompleteGames().size() != 0);
+    }
+
     public void clickNewGame() {
+        if (repository.getNoCompleteGames().size() != 0) getViewState().showDialog();
+        else positiveDialogResult();
+    }
+
+    public void positiveDialogResult() {
+        for (Game noCompleteGame : repository.getNoCompleteGames()) {
+            repository.deleteGame(noCompleteGame);
+        }
+
         Game game = new Game();
         repository.setGame(game);
         repository.saveGameToDB(game);
@@ -31,5 +50,4 @@ public class MenuPresenter extends MvpPresenter<MenuView> {
         repository.loadGameFromDB();
         getViewState().goToMainActivity();
     }
-
 }

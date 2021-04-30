@@ -11,4 +11,16 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="DialogTheme" parent="Theme.AppCompat.Dialog">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.ColorHighlight">
+        <item name="android:colorControlHighlight">@color/colorHighlight</item>
+    </style>
+
 </resources>

@@ -25,6 +25,9 @@ public class Game {
     @ColumnInfo(name = "current_episode_id")
     private int currentEpisodeId;
 
+    @ColumnInfo(name = "complete")
+    private int complete;
+
     @Ignore
     private List<UserCharacteristic> characteristicList;
 
@@ -40,6 +43,7 @@ public class Game {
         this.create = timestamp;
         this.lastModified = timestamp;
         this.currentEpisodeId = 1;
+        this.complete = 0;
         initCharacteristicList(timestamp);
         initItemList(timestamp);
         initKeywordList(timestamp);
@@ -156,6 +160,14 @@ public class Game {
 
     public void setCurrentEpisodeId(int currentEpisodeId) {
         this.currentEpisodeId = currentEpisodeId;
+    }
+
+    public int getComplete() {
+        return complete;
+    }
+
+    public void setComplete(int complete) {
+        this.complete = complete;
     }
 
     public List<UserCharacteristic> getCharacteristicList() {

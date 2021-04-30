@@ -59,6 +59,15 @@ public class MainPresenter extends MvpPresenter<MainView> {
         getViewState().clearOptionButtonsContainer();
         getViewState().initOptionButtonList(getValidatedOptionList(repository.getOptionList(id)));
         setCharacteristics(repository.getGame().getCharacteristicList());
+
+        if (currentEpisode.isEnd()) completeGame();
+        getViewState().setVisibilityCompleteGame(currentEpisode.isEnd());
+    }
+
+    private void completeGame() {
+        repository.getGame().setComplete(1);
+        repository.getGame().setLastModified(new Date().getTime());
+        repository.saveGameToDB(repository.getGame());
     }
 
     private List<Option> getValidatedOptionList(List<Option> list) {
@@ -152,5 +161,9 @@ public class MainPresenter extends MvpPresenter<MainView> {
                     break;
             }
         }
+    }
+
+    public void onBackToMenuButtonClick() {
+        getViewState().backToMenu();
     }
 }

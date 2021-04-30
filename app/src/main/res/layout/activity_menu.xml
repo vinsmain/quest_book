@@ -1,27 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/menu_background"
     android:gravity="center"
     android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/menu_new_game"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView"
+        fontPath="fonts/bangkok-cyr.ttf"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Новая игра" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/menu_title"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingPrefix" />
 
-    <Button
-        android:id="@+id/menu_continue_game"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView2"
+        fontPath="fonts/bangkok-cyr.ttf"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Продолжить игру" />
+        android:layout_marginTop="8dp"
+        android:text="@string/menu_author_header"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="MissingPrefix" />
 
-    <Button
-        android:id="@+id/menu_exit"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView3"
+        fontPath="fonts/bangkok-cyr.ttf"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Выйти" />
-</LinearLayout>
+        android:layout_marginTop="8dp"
+        android:text="@string/menu_author_name"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/menu_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        tools:text="версия 1.0"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <Button
+            android:id="@+id/menu_new_game"
+            fontPath="fonts/bangkok-cyr.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:padding="24dp"
+            android:text="@string/Menu_new_game_header"
+            android:textSize="16sp"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:id="@+id/menu_continue_game"
+            fontPath="fonts/bangkok-cyr.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:padding="24dp"
+            android:text="@string/menu_continue_game_header"
+            android:textSize="16sp"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:id="@+id/menu_exit"
+            fontPath="fonts/bangkok-cyr.ttf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_orange_dark"
+            android:padding="24dp"
+            android:text="@string/menu_exit_game_header"
+            android:textSize="16sp"
+            tools:ignore="MissingPrefix" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

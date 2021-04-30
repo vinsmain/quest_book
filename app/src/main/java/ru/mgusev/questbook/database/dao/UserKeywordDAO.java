@@ -15,6 +15,9 @@ public interface UserKeywordDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(List<UserKeyword> list);
 
+    @Insert()
+    void delete(List<UserKeyword> list);
+
     @Query("SELECT * FROM user_keywords WHERE game_id = :gameId")
     List<UserKeyword> getUserKeywords(long gameId);
 

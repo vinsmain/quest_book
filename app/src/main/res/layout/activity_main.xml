@@ -18,82 +18,120 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/main_stamina_linear"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="8dp"
             android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackground"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:theme="@style/AppTheme.ColorHighlight">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="@string/stamina_header"
                 android:src="@drawable/stamina" />
 
             <TextView
                 android:id="@+id/main_stamina_value"
+                fontPath="fonts/bangkok-cyr.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="10"
+                android:layout_marginLeft="8dp"
+                android:ellipsize="marquee"
+                android:singleLine="false"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                tools:ignore="MissingPrefix"
+                tools:text="10" />
         </LinearLayout>
 
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/main_courage_linear"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="8dp"
             android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackground"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:theme="@style/AppTheme.ColorHighlight">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="@string/courage_header"
                 android:src="@drawable/courage" />
 
             <TextView
                 android:id="@+id/main_courage_value"
+                fontPath="fonts/bangkok-cyr.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="10"
+                android:layout_marginLeft="8dp"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                tools:ignore="MissingPrefix"
+                tools:text="10" />
         </LinearLayout>
 
+
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/main_sympathy_linear"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="8dp"
             android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackground"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:theme="@style/AppTheme.ColorHighlight">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="@string/sympathy_header"
                 android:src="@drawable/sympathy" />
 
             <TextView
                 android:id="@+id/main_sympathy_value"
+                fontPath="fonts/bangkok-cyr.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="10"
+                android:layout_marginLeft="8dp"
+                android:singleLine="false"
                 android:textAlignment="center"
                 android:textColor="@android:color/black"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                tools:ignore="MissingPrefix"
+                tools:text="10" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/main_character_list_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:theme="@style/AppTheme.ColorHighlight">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/courage_header"
+                android:src="@drawable/character_list" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -152,7 +190,15 @@
                 ext:documentView_textColor="@android:color/black"
                 ext:documentView_textTypefacePath="fonts/bangkok-cyr.ttf"
                 ext:documentView_textFormat="plain"
-                ext:documentView_textSize="16sp" />
+                ext:documentView_textSize="16sp" >
+
+            </com.bluejamesbond.text.DocumentView>
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/monogram" />
 
             <LinearLayout
                 android:id="@+id/main_option_buttons_container"
@@ -166,8 +212,26 @@
 
             </LinearLayout>
 
-        </LinearLayout>
+            <TextView
+                android:id="@+id/main_game_over"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/main_game_over_header"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="18sp" />
 
+            <Button
+                android:id="@+id/main_back_to_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:padding="24dp"
+                android:text="@string/main_back_to_menu_header"
+                android:textSize="16sp" />
+
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 

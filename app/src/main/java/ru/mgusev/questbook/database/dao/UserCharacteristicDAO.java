@@ -15,6 +15,9 @@ public interface UserCharacteristicDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(List<UserCharacteristic> list);
 
+    @Insert()
+    void delete(List<UserCharacteristic> list);
+
     @Query("SELECT * FROM user_characteristics WHERE game_id = :gameId")
     List<UserCharacteristic> getUserCharacteristics(long gameId);
 

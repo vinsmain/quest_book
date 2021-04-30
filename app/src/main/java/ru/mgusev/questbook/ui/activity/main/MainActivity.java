@@ -2,9 +2,7 @@ package ru.mgusev.questbook.ui.activity.main;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.widget.NestedScrollView;
@@ -14,25 +12,25 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import butterknife.OnClick;
+import io.github.inflationx.viewpump.ViewPumpContextWrapper;
 import ru.mgusev.questbook.R;
 import ru.mgusev.questbook.model.Option;
 import ru.mgusev.questbook.presentation.view.main.MainView;
 import ru.mgusev.questbook.presentation.presenter.main.MainPresenter;
 import ru.mgusev.questbook.support.ResizableImageView;
 import ru.mgusev.questbook.support.RotatedBitmap;
+import ru.mgusev.questbook.ui.activity.menu.MenuActivity;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.bluejamesbond.text.DocumentView;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.List;
 import java.util.Random;
@@ -51,6 +49,8 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, View
     @BindView(R.id.main_stamina_value) TextView staminaValue;
     @BindView(R.id.main_courage_value) TextView courageValue;
     @BindView(R.id.main_sympathy_value) TextView sympathyValue;
+    @BindView(R.id.main_game_over) TextView gameOver;
+    @BindView(R.id.main_back_to_menu) Button backToMenu;
 
     private LinearLayout.LayoutParams imageViewLayoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
     private Typeface type;
@@ -63,10 +63,17 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         type = Typeface.createFromAsset(getAssets(),"fonts/bangkok-cyr.ttf");
+        if (!MenuActivity.initialized) startActivity(MenuActivity.getIntent(this));
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(base));
     }
 
     @Override
@@ -132,5 +139,37 @@ public class MainActivity extends MvpAppCompatActivity implements MainView, View
     @Override
     public void setSympathyValue(String value) {
         sympathyValue.setText(value);
+    }
+
+    @Override
+    public void setVisibilityCompleteGame(boolean visibility) {
+        gameOver.setVisibility(visibility ? View.VISIBLE : View.GONE);
+        backToMenu.setVisibility(visibility ? View.VISIBLE : View.GONE);
+    }
+
+    @OnClick({R.id.main_back_to_menu, R.id.main_character_list_linear, R.id.main_stamina_linear, R.id.main_courage_linear, R.id.main_sympathy_linear})
+    public void onClickIcon(View view) {
+        switch (view.getId()) {
+            case R.id.main_back_to_menu :
+                mainPresenter.onBackToMenuButtonClick();
+                break;
+            case R.id.main_character_list_linear :
+                startActivity(CharacterListActivity.getIntent(this));
+                break;
+            case R.id.main_stamina_linear :
+                Toast.makeText(this, R.string.stamina_header, Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.main_courage_linear :
+                Toast.makeText(this, R.string.courage_header, Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.main_sympathy_linear :
+                Toast.makeText(this, R.string.sympathy_header, Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
+    @Override
+    public void backToMenu() {
+        startActivity(MenuActivity.getIntent(this));
     }
 }

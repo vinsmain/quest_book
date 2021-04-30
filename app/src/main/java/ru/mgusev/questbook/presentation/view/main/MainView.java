@@ -23,4 +23,8 @@ public interface MainView extends MvpView {
     void setCourageValue(String value);
 
     void setSympathyValue(String value);
+
+    void setVisibilityCompleteGame(boolean visibility);
+
+    void backToMenu();
 }
