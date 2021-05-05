@@ -1,12 +1,11 @@
 package ru.mgusev.questbook.presentation.presenter.menu;
 
+import moxy.InjectViewState;
+import moxy.MvpPresenter;
 import ru.mgusev.questbook.app.App;
 import ru.mgusev.questbook.model.Game;
 import ru.mgusev.questbook.presentation.view.menu.MenuView;
 import ru.mgusev.questbook.repository.Repository;
-
-import com.arellomobile.mvp.InjectViewState;
-import com.arellomobile.mvp.MvpPresenter;
 
 import javax.inject.Inject;
 

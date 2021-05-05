@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.widget.NestedScrollView;
+import androidx.core.widget.NestedScrollView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -19,6 +19,8 @@ import butterknife.ButterKnife;
 
 import butterknife.OnClick;
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
+import moxy.MvpAppCompatActivity;
+import moxy.presenter.InjectPresenter;
 import ru.mgusev.questbook.R;
 import ru.mgusev.questbook.model.Option;
 import ru.mgusev.questbook.presentation.view.main.MainView;
@@ -27,9 +29,6 @@ import ru.mgusev.questbook.support.ResizableImageView;
 import ru.mgusev.questbook.support.RotatedBitmap;
 import ru.mgusev.questbook.ui.activity.menu.MenuActivity;
 
-import com.arellomobile.mvp.MvpAppCompatActivity;
-
-import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.bluejamesbond.text.DocumentView;
 
 import java.util.List;

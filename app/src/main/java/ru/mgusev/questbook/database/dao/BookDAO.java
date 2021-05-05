@@ -1,6 +1,6 @@
 package ru.mgusev.questbook.database.dao;
 
-import android.arch.persistence.room.Dao;
+import androidx.room.Dao;
 
 @Dao
 public interface BookDAO {

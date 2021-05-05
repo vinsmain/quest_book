@@ -1,5 +1,7 @@
 package ru.mgusev.questbook.presentation.presenter.main;
 
+import moxy.InjectViewState;
+import moxy.MvpPresenter;
 import ru.mgusev.questbook.app.App;
 import ru.mgusev.questbook.model.Condition;
 import ru.mgusev.questbook.model.Episode;
@@ -9,9 +11,6 @@ import ru.mgusev.questbook.model.UserItem;
 import ru.mgusev.questbook.model.UserKeyword;
 import ru.mgusev.questbook.presentation.view.main.MainView;
 import ru.mgusev.questbook.repository.Repository;
-
-import com.arellomobile.mvp.InjectViewState;
-import com.arellomobile.mvp.MvpPresenter;
 
 import org.json.JSONArray;
 import org.json.JSONException;

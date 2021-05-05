@@ -3,14 +3,11 @@ package ru.mgusev.questbook.ui.activity.main;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
-
-import com.arellomobile.mvp.MvpAppCompatActivity;
-import com.arellomobile.mvp.presenter.InjectPresenter;
 
 import java.util.List;
 
@@ -18,6 +15,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
+import moxy.MvpAppCompatActivity;
+import moxy.presenter.InjectPresenter;
 import ru.mgusev.questbook.R;
 import ru.mgusev.questbook.adapter.ItemListAdapter;
 import ru.mgusev.questbook.model.Item;
@@ -93,6 +92,6 @@ public class CharacterListActivity extends MvpAppCompatActivity implements Chara
 
     @OnClick({R.id.character_list_back_to_menu})
     public void onClick() {
-        startActivity(MenuActivity.getIntent(this));
+        finish();
     }
 }

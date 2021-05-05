@@ -13,19 +13,14 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.github.inflationx.viewpump.ViewPumpContextWrapper;
+import moxy.MvpAppCompatActivity;
+import moxy.presenter.InjectPresenter;
 import ru.mgusev.questbook.BuildConfig;
 import ru.mgusev.questbook.R;
 import ru.mgusev.questbook.presentation.view.menu.MenuView;
 import ru.mgusev.questbook.presentation.presenter.menu.MenuPresenter;
 import ru.mgusev.questbook.ui.activity.main.MainActivity;
 import ru.mgusev.questbook.ui.dialog.CustomDialog;
-
-import com.arellomobile.mvp.MvpAppCompatActivity;
-
-
-import com.arellomobile.mvp.presenter.InjectPresenter;
-
-import static ru.mgusev.questbook.R.string.version_header;
 
 public class MenuActivity extends MvpAppCompatActivity implements MenuView {
     public static final String TAG = "MenuActivity";

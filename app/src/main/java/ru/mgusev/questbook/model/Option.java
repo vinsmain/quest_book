@@ -1,10 +1,10 @@
 package ru.mgusev.questbook.model;
 
-import android.arch.persistence.room.ColumnInfo;
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.Index;
-import android.arch.persistence.room.PrimaryKey;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
 
 @Entity(tableName = "options", foreignKeys = @ForeignKey(entity = Episode.class, parentColumns = "_id", childColumns = "parent_episode_id"), indices = {@Index("parent_episode_id")})
 public class Option {

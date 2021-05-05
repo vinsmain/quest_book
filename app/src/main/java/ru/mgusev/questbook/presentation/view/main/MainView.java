@@ -1,11 +1,13 @@
 package ru.mgusev.questbook.presentation.view.main;
 
-import com.arellomobile.mvp.MvpView;
-
 import java.util.List;
 
+import moxy.MvpView;
+import moxy.viewstate.strategy.AddToEndSingleStrategy;
+import moxy.viewstate.strategy.StateStrategyType;
 import ru.mgusev.questbook.model.Option;
 
+@StateStrategyType(AddToEndSingleStrategy.class)
 public interface MainView extends MvpView {
 
     void setVisibilityEpisodeImage(boolean visible);

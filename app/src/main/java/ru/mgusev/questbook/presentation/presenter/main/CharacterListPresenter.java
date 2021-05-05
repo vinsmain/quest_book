@@ -1,12 +1,11 @@
 package ru.mgusev.questbook.presentation.presenter.main;
 
-import com.arellomobile.mvp.InjectViewState;
-import com.arellomobile.mvp.MvpPresenter;
-
 import java.util.List;
 
 import javax.inject.Inject;
 
+import moxy.InjectViewState;
+import moxy.MvpPresenter;
 import ru.mgusev.questbook.app.App;
 import ru.mgusev.questbook.model.UserCharacteristic;
 import ru.mgusev.questbook.presentation.view.main.CharacterListView;
