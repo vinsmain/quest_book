@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "7acf63bcdd471dd3716ff7b78998b09e",
+    "identityHash": "18328e30234c2a4094f8cfd16f36f2cb",
     "entities": [
       {
         "tableName": "books",
@@ -44,7 +44,7 @@
       },
       {
         "tableName": "episodes",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER NOT NULL, `book_id` INTEGER NOT NULL, `text` TEXT, `image` TEXT, `end` INTEGER NOT NULL, PRIMARY KEY(`_id`), FOREIGN KEY(`book_id`) REFERENCES `books`(`_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER NOT NULL, `book_id` INTEGER NOT NULL, `text` TEXT, `image` TEXT, `end` INTEGER NOT NULL, PRIMARY KEY(`_id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -83,33 +83,12 @@
           ],
           "autoGenerate": false
         },
-        "indices": [
-          {
-            "name": "index_episodes_book_id",
-            "unique": false,
-            "columnNames": [
-              "book_id"
-            ],
-            "createSql": "CREATE  INDEX `index_episodes_book_id` ON `${TABLE_NAME}` (`book_id`)"
-          }
-        ],
-        "foreignKeys": [
-          {
-            "table": "books",
-            "onDelete": "NO ACTION",
-            "onUpdate": "NO ACTION",
-            "columns": [
-              "book_id"
-            ],
-            "referencedColumns": [
-              "_id"
-            ]
-          }
-        ]
+        "indices": [],
+        "foreignKeys": []
       },
       {
         "tableName": "options",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER NOT NULL, `parent_episode_id` INTEGER NOT NULL, `text` TEXT, `children_episode_id` INTEGER NOT NULL, `conditions` TEXT, `effects` TEXT, `random` INTEGER NOT NULL, PRIMARY KEY(`_id`), FOREIGN KEY(`parent_episode_id`) REFERENCES `episodes`(`_id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER NOT NULL, `parent_episode_id` INTEGER NOT NULL, `text` TEXT, `children_episode_id` INTEGER NOT NULL, `conditions` TEXT, `effects` TEXT, `random` INTEGER NOT NULL, PRIMARY KEY(`_id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -160,29 +139,8 @@
           ],
           "autoGenerate": false
         },
-        "indices": [
-          {
-            "name": "index_options_parent_episode_id",
-            "unique": false,
-            "columnNames": [
-              "parent_episode_id"
-            ],
-            "createSql": "CREATE  INDEX `index_options_parent_episode_id` ON `${TABLE_NAME}` (`parent_episode_id`)"
-          }
-        ],
-        "foreignKeys": [
-          {
-            "table": "episodes",
-            "onDelete": "NO ACTION",
-            "onUpdate": "NO ACTION",
-            "columns": [
-              "parent_episode_id"
-            ],
-            "referencedColumns": [
-              "_id"
-            ]
-          }
-        ]
+        "indices": [],
+        "foreignKeys": []
       },
       {
         "tableName": "games",
@@ -375,9 +333,10 @@
         "foreignKeys": []
       }
     ],
+    "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"7acf63bcdd471dd3716ff7b78998b09e\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '18328e30234c2a4094f8cfd16f36f2cb')"
     ]
   }
 }

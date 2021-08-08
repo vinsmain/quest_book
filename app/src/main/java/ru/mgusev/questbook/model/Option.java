@@ -6,7 +6,7 @@ import androidx.room.ForeignKey;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "options", foreignKeys = @ForeignKey(entity = Episode.class, parentColumns = "_id", childColumns = "parent_episode_id"), indices = {@Index("parent_episode_id")})
+@Entity(tableName = "options")
 public class Option {
 
     @PrimaryKey
